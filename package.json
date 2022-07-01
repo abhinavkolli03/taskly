@@ -8,14 +8,17 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/react-redux": "^7.1.24",
+    "aos": "^2.3.4",
     "bulma": "^0.9.4",
     "fortawesome": "^0.0.1-security",
+    "inline-style": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -43,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.14",

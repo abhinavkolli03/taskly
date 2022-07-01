@@ -28,7 +28,7 @@ const DeleteListModal: FC<DeleteListModalProps> = ({ listId }) => {
   }
 
   return(
-    <div className="modal is-active">
+    <div style={{margin: '2rem auto 2rem auto'}} className="modal is-active">
       <div className="modal-background" onClick={hideModalHandler}></div>
       <div className="modal-card">
         <header className="modal-card-head has-text-centered">

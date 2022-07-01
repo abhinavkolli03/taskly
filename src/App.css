@@ -1,22 +1,9 @@
-.panel-block {
-  justify-content: space-between;
-}
-
-.panel-block p {
-  cursor: pointer;
-}
-
-.panel-icon {
-  margin-right: 0;
-  cursor: pointer;
-}
-
 .fullwidth {
   width: 100%;
 }
 
 .section {
-  padding: 2rem 0;
+  padding: 0.25rem 0;
 }
 
 .table tr td:nth-child(2),
@@ -28,6 +15,47 @@ tr.completed {
   opacity: 0.5;
 }
 
+tr {
+  background-color: orange;
+}
+
 tr.completed td:first-child {
   text-decoration: line-through;
+}
+
+.panel-block {
+  justify-content: flex-end;
+}
+
+.panel-block p {
+  cursor: pointer;
+}
+
+.panel-icon {
+  margin-right: 0;
+  cursor: pointer;
+}
+
+.htmlTable {
+  width: 100%;
+}
+
+.firstDiv {
+  display: table-cell;
+  width: 80%;
+  vertical-align: top;
+}
+
+.firstDiv .input {
+  display: block;
+}
+
+.secondDiv {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.row {
+  width: 100%;
+  display: table;
 }
