@@ -10,8 +10,8 @@ const Sidebar: FC = () => {
 
     return(
         <div className="column is-4">
-            <Notification msg={notificationMsg} />
             <Lists />
+            <Notification msg={notificationMsg} />
         </div>
     );
 }

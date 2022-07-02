@@ -13,12 +13,6 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 const App: FC = () => {
-  useEffect(() => {
-      AOS.init({
-          duration:2000
-      });
-      AOS.refresh()
-  }, []);
 
   const listIdToDelete = useSelector((state: RootState) => state.list.listIdToDelete);
   const listToEdit = useSelector((state: RootState) => state.list.listToEdit);
@@ -28,7 +22,7 @@ const App: FC = () => {
   return (
     <div className="App">
       <Header title="Taskly" subtitle="Check out your lists and add some tasks to them!"/>
-      <div className="container px-5">
+      <div className="container px-0">
         <div className="columns">
           <Sidebar />
           <MainContent />
@@ -38,6 +32,7 @@ const App: FC = () => {
       {listToEdit && <EditListModal list={listToEdit}/>}
       {taskToEdit && <EditTaskModal taskToEdit={taskToEdit}/>}
       {taskToDelete && <DeleteTaskModal taskToDelete={taskToDelete}/>}
+      <p style={{color: 'white'}}className="bottom-end">©{new Date().getFullYear()} Abhinav Kolli. All rights reserved.</p>
     </div>
   );
 }

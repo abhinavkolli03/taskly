@@ -14,6 +14,7 @@ export const UNSET_TASK_TO_DELETE = 'UNSET_TASK_TO_DELETE';
 export const UPDATE_TASK = 'UPDATE_TASK';
 export const SET_TASK_TO_EDIT = 'SET_TASK_TO_EDIT';
 export const UNSET_TASK_TO_EDIT = 'UNSET_TASK_TO_EDIT';
+export const SET_TASK_TO_COMPLETE = 'SET_TASK_TO_COMPLETE';
 
 export const SET_NOTIFICATION = 'SET_NOTIFICATION';
 
@@ -21,6 +22,7 @@ export interface Task {
     name: string;
     id: string;
     completed: boolean;
+    important: boolean;
 }
 
 export interface List {

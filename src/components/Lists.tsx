@@ -3,11 +3,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../storing/storage';
 import { getLists, setListToEdit, setListIdToDelete, addList, setNotification, setSelectedList } from '../storing/actions';
 import { List } from '../storing/types';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const Lists: FC = () => {
     const dispatch = useDispatch();
     const lists = useSelector((state: RootState) => state.list.lists);
     const [listName, setListName] = useState('');
+
+    useEffect(() => {
+        AOS.init({
+            duration:2000
+        });
+        AOS.refresh()
+    }, []);
 
     useEffect(() => {
         dispatch(getLists());
@@ -48,7 +57,7 @@ const Lists: FC = () => {
     }
 
     return(
-        <div className="panel is-primary">
+        <div className="panel is-warning">
         <p className="panel-heading">Your lists</p>
         <div className="card mb-3">
                 <div className="card-content">
@@ -74,19 +83,19 @@ const Lists: FC = () => {
         <div>
             { Object.keys(lists).length === 0
             ?
-                <p className="py-4 has-text-centered">No Lists</p>
+                <p className="py-4 has-text-centered" style={{marginRight: '10px', marginLeft: '10px', color: 'white'}}><em>Create a list first to start adding tasks!</em></p>
             :
                 <div>
                 {Object.values(lists).map((list: List) => {
                     return (
-                        <div className="panel-block is-justify-content-space-between py-5 " key={list.id}>
+                        <div onClick={() => setChangedListHandler(list.id)} className="panel-block is-justify-content-space-between py-5 hovering" key={list.id}>
                             <p onClick={() => setChangedListHandler(list.id)}>{list.name}</p>
-                            <div>
+                            <div style={{marginRight: '20px'}}>
                                 <span className="panel-icon has-text-info" onClick={() => setListToEditHandler(list.id)}>
-                                    <i className="fa-solid fa-pen-to-square"></i>
+                                    <i style={{fontSize: '20px'}} className="fa-solid fa-pen-to-square"></i>
                                 </span>
                                 <span className="panel-icon has-text-danger" onClick={() => setListIdToDeleteHandler(list.id)}>
-                                    <i className="fas fa-times-circle"></i>
+                                    <i style={{fontSize: '20px', marginLeft: '10px' }} className="fa-solid fa-circle-minus"></i>
                                 </span>
                             </div>
                         </div>

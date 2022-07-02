@@ -36,7 +36,8 @@ const Tasks: FC<TasksProps> = ({ selectedList }) => {
         const newTask: Task = {
         name: taskName,
         id: `task-${new Date().getTime()}`,
-        completed: false
+        completed: false,
+        important: false
         }
 
         dispatch(addTask(newTask, list));
@@ -46,7 +47,7 @@ const Tasks: FC<TasksProps> = ({ selectedList }) => {
 
 
     const tasksTable = (
-        <div  data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="400">
+        <div>
         <table style={{borderCollapse: 'separate', borderSpacing: '0px 4px'}} className="table is-fullwidth">
         <thead>
 
@@ -54,21 +55,22 @@ const Tasks: FC<TasksProps> = ({ selectedList }) => {
         <tbody>
             {
             selectedList.tasks.map((task: Task) => (
-                <tr key={task.id} className={task.completed ? 'completed table-body' : 'table-body'}>
+                <tr key={task.id} className={task.completed ? 'completed' : ''}>
                     <td>
                     {task.name}
                     </td>
-                    <td className="has-text-centered">
+                    <td className="has-text-right" style={{paddingRight: '0px'}}>
                         <button className="button is-primary is-small" onClick={() => setTaskToEditHandler(task)}>
                         <span className="icon">
                             <i className="fas fa-edit"></i>
                         </span>
                         </button>
                     </td>
-                    <td className="has-text-centered">
+                    
+                    <td className="has-text-right" style={{paddingLeft: '0px', paddingRight: '50px'}}>
                         <button className="button is-danger is-small" onClick={() => setTaskToDeleteHandler(task)}>
                         <span className="icon">
-                            <i className="fas fa-times"></i>
+                            <i className="fas fa-minus"></i>
                         </span>
                         </button>
                     </td>
@@ -92,8 +94,8 @@ const Tasks: FC<TasksProps> = ({ selectedList }) => {
     );
 
     const noTasks = (
-        <div  data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="400">
-        <p className="py-4 has-text-centered">No Tasks</p>
+        <div>
+        <h2 className="py-4 has-text-centered">No Tasks</h2>
         <form className="htmlTable" onSubmit={submitHandler}>
             <div className="field row">
             <div className="control firstDiv">
@@ -109,7 +111,7 @@ const Tasks: FC<TasksProps> = ({ selectedList }) => {
 
     return(
         <section>
-        <h2 data-aos="fade-in" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="400" style={{marginLeft: '1%', color: 'orangered'}} className="is-size-4 has-text-left py-4"><b>{selectedList.name}</b></h2>
+        <h2 style={{marginLeft: '1%'}} className="is-size-4 has-text-left"><b>{selectedList.name}</b></h2>
         {selectedList.tasks.length === 0 ? noTasks : tasksTable}
         </section>
     );

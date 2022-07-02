@@ -10,7 +10,7 @@ const initialState: ListState = {
     listById: null,
     selectedList: null,
     taskToDelete: null,
-    taskToEdit: null
+    taskToEdit: null,
 }
 
 const getListsFromLS = (): Lists => {

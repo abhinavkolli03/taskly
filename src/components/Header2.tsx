@@ -7,7 +7,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ title, subtitle }) => {
   return (
-    <header className="hero has-text-centered is-warning is-bold mb-5">
+    <header className="hero has-text-centered is-bold mb-5">
         <div className="hero-body">
             <div className="container">
                 <h1 className="title mb-3">{title}</h1>
