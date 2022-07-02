@@ -32,7 +32,10 @@ const App: FC = () => {
       {listToEdit && <EditListModal list={listToEdit}/>}
       {taskToEdit && <EditTaskModal taskToEdit={taskToEdit}/>}
       {taskToDelete && <DeleteTaskModal taskToDelete={taskToDelete}/>}
-      <p style={{color: 'white'}}className="bottom-end">©{new Date().getFullYear()} Abhinav Kolli. All rights reserved.</p>
+      <div style={{paddingTop: '50px'}}>
+        <p style={{color: 'white'}} className="bottom-end">©{new Date().getFullYear()} Abhinav Kolli. All rights reserved.</p>
+        <p style={{color: 'white'}} className="bottom-end">Check out the <a href="https://github.com/abhinavkolli03/taskly">repository!</a></p>
+      </div>
     </div>
   );
 }
