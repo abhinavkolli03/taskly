@@ -32,7 +32,7 @@ const DeleteListModal: FC<DeleteListModalProps> = ({ listId }) => {
       <div className="modal-background" onClick={hideModalHandler}></div>
       <div className="modal-card">
         <header className="modal-card-head has-text-centered">
-          <p className="modal-card-title">Are you sure you want to delete this list?</p>
+          <p className="modal-card-title">Ready to delete?</p>
         </header>
         <div className="modal-card-body">
           <h2 className="is-size-5 has-text-centered">All tasks related to this list will be deleted</h2>
